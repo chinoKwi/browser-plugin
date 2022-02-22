@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "RABBITAPI",
+  "version": "1.0.0",
+  "description": "RABBITAPI随机壁纸",
+  "icons": {
+    "16": "img/icon.png",
+    "48": "img/icon.png",
+    "128": "img/icon.png"
+  },
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_title": "RABBITAPI",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "notifications",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "web_accessible_resources": [
+    "js/inject.js"
+  ],
+  "homepage_url": "https://kafuuchino.com.cn/",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "devtools_page": "devtools.html"
+}
