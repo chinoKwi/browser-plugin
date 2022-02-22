@@ -4,10 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/newtab.css" />
+    <script src="./js/utils/dayjs.js"></script>
+    <script src="./js/utils/jquery.js"></script>
+    <script src="./js/utils/axios.js"></script>
     <title>RABBIT-API 起始页</title>
   </head>
   <body>
-    <h1>RABBITAPI</h1>
     <!-- https://www.cnblogs.com/liuxianan/p/chrome-plugin-develop.html -->
+    <div id="root_preload"></div>
+    <div class="new_tab_box">
+      <!-- 壁纸 -->
+      <div class="bg_wrap">
+        <div class="bg_image"></div>
+      </div>
+      <!-- 主体内容 -->
+      <div class="content">
+        <div class="main">
+          <!-- 时间日期 -->
+          <div class="date_time_view">
+            <div class="time"></div>
+            <div class="date"></div>
+            <div class="time_type"></div>
+          </div>
+          <!-- 搜索框 -->
+          <div class="search"></div>
+        </div>
+      </div>
+      <!-- 头像设置 -->
+    </div>
+    <script src="./js/newtab/index.js"></script>
   </body>
 </html>

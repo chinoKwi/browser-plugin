@@ -1,0 +1,73 @@
+#root_preload{
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+.new_tab_box {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  transform: translate3d(0,0,0);
+}
+.bg_wrap{
+  user-select: none;
+  animation-fill-mode: none !important
+} 
+.bg_image{
+  filter: blur(0px);
+  transform: scale(1);
+  position: absolute;
+  display: block;
+  object-fit: cover;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all .4s;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  transition-timing-function: ease;
+}
+.content{
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  user-select: none;
+}
+.main{
+  margin-top: -260px;
+}
+.date_time_view {
+  position: relative;
+}
+.date_time_view .time{
+  color: #fff;
+  font-size: 107px;
+  text-shadow: 0 8px 12px rgba(0, 0, 0, .1);
+}
+.date_time_view .time_type{
+  position: absolute;
+  top: 0;
+  right: -50px;
+  font-size: 25px;
+  color: #fff;
+}
+.date_time_view .date {
+  padding-bottom: 16px;
+  vertical-align: baseline;
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.5;
+  text-align: center;
+}
