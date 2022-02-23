@@ -18,18 +18,32 @@
       <!-- 壁纸 -->
       <div class="bg_wrap">
         <div class="bg_image"></div>
+        <div class="cover"></div>
       </div>
       <!-- 主体内容 -->
       <div class="content">
         <div class="main">
           <!-- 时间日期 -->
           <div class="date_time_view">
-            <div class="time"></div>
+            <div class="time_warp">
+              <div class="time"><div class="time_type"></div></div>
+            </div>
             <div class="date"></div>
-            <div class="time_type"></div>
           </div>
           <!-- 搜索框 -->
-          <div class="search"></div>
+          <div class="search">
+            <input
+              class="search_input"
+              type="text"
+              autofocus="autofocus"
+              autocomplete="off"
+              maxlength="250"
+              placeholder="搜索"
+            />
+            <div class="search_result">
+              <!-- <div class="result_item"></div> -->
+            </div>
+          </div>
         </div>
       </div>
       <!-- 头像设置 -->

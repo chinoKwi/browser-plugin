@@ -32,6 +32,14 @@
   background-position: 50%;
   transition-timing-function: ease;
 }
+.cover{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: all .3s;
+}
 .content{
   overflow: hidden;
   display: flex;
@@ -46,28 +54,100 @@
   user-select: none;
 }
 .main{
-  margin-top: -260px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -30%;
+  transition: all .5s;
 }
-.date_time_view {
+.main .date_time_view {
   position: relative;
 }
-.date_time_view .time{
+.main .date_time_view {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+}
+.main .date_time_view .time_warp{
+  position: relative;
+  display: flex;
+  justify-content: center;
   color: #fff;
-  font-size: 107px;
+  font-size: 75px;
   text-shadow: 0 8px 12px rgba(0, 0, 0, .1);
 }
-.date_time_view .time_type{
+.main .date_time_view .time_warp .time {
+  position: relative;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+}
+.main .date_time_view .time_warp .time .time_type{
   position: absolute;
   top: 0;
-  right: -50px;
-  font-size: 25px;
+  right: -40px;
+  font-size: 20px;
   color: #fff;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
 }
-.date_time_view .date {
+.main .date_time_view .date {
   padding-bottom: 16px;
   vertical-align: baseline;
   font-size: 20px;
   color: #fff;
   line-height: 1.5;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+}
+.main .search {
+  width: 330px;
+  height: 43px;
+  background-color: rgba(225, 225, 225, .8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  border-radius: 30px;
+  transition: all .3s;
+}
+.main .search:hover{
+  width: 500px !important;
+}
+.main .search .search_select {}
+.main .search .search_result {
+  cursor: pointer;
+  width: 100%;
+  height: 0px;
+  border-radius: 15px;
+  backdrop-filter: blur(30px);
+  margin-top: 10px;
+  overflow: hidden;
+  transition: all .3s;
+}
+.main .search .search_result .result_item {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  color: rgba(225 , 225, 225, .8);
+  /* background: rgba(225, 225, 225, .1); */
+  padding: 0px 15px;
+  transition: all .3s;
+}
+/* .main .search .search_result .result_item:active{
+  text-indent: 20px;
+  color: rgba(0, 0, 0, .5);
+  background:rgb(135, 206, 250)
+} */
+.main .search .search_result .result_item:hover{
+  text-indent: 20px;
+  color: #FFF;
+  background: rgba(225, 225, 225, .4);
+}
+.main .search .search_input{
+  outline: 0;
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  color: inherit;
+  background-color: transparent;
+  font-size: 14px;
   text-align: center;
 }
