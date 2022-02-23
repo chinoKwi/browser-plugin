@@ -85,7 +85,16 @@ function change_bg() {
         url: url,
       }).then((result) => {
         if (result.meta.status != 200) return;
-        $(".bg_image").css("background-image", `url(${result.data.url})`);
+        $("#img_bg").attr("src", result.data.url);
+        $("#img_bg")[0].onload = function () {
+          $(".bg_image").css("background-image", `url(${result.data.url})`);
+          if (document.getElementById("loading_warp")) {
+            document.getElementById("loading_warp").style.opacity = 0;
+            setTimeout(() => {
+              document.getElementById("loading_warp").remove();
+            }, 1000);
+          }
+        };
       });
     }
   );
