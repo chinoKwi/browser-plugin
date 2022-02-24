@@ -54,11 +54,12 @@
   user-select: none;
 }
 .main{
+  opacity: 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: -30%;
+  margin-top: -10%;
   transition: all .5s;
 }
 .main .date_time_view {

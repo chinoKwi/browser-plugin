@@ -83,19 +83,23 @@ function change_bg() {
       url = items.img_url;
       axios({
         url: url,
-      }).then((result) => {
-        if (result.meta.status != 200) return;
-        $("#img_bg").attr("src", result.data.url);
-        $("#img_bg")[0].onload = function () {
-          $(".bg_image").css("background-image", `url(${result.data.url})`);
-          if (document.getElementById("loading_warp")) {
-            document.getElementById("loading_warp").style.opacity = 0;
-            setTimeout(() => {
-              document.getElementById("loading_warp").remove();
-            }, 1000);
-          }
-        };
-      });
+      })
+        .then((result) => {
+          if (result.meta.status != 200) return;
+          $("#img_bg").attr("src", result.data.url);
+          $("#img_bg")[0].onload = function () {
+            $(".bg_image").css("background-image", `url(${result.data.url})`);
+            if (document.getElementById("loading_warp")) {
+              document.getElementById("loading_warp").style.opacity = 0;
+              setTimeout(() => {
+                document.getElementById("loading_warp").remove();
+              }, 1000);
+            }
+          };
+        })
+        .finally(() => {
+          $(".main").css("opacity", "1");
+        });
     }
   );
 }
@@ -110,6 +114,29 @@ $(".search_result").on("mouseleave", function () {
 // 搜索状态
 $(".search_input").on("focus", search_input_focus);
 $(".search_input").on("blur", search_input_blur);
+// 监听按键s
+$(document).keydown(function (event) {
+  if (event.keyCode === 83) {
+    // 按的是s
+    const myInput = $(".search_input")[0];
+    if (myInput !== document.activeElement) {
+      $(".search_input").focus();
+      event.preventDefault();
+    }
+  }
+  if (event.keyCode === 13) {
+    const myInput = $(".search_input")[0];
+    if (myInput === document.activeElement) {
+      if (myInput.value) {
+        // 跳转百度
+        to_url(`https://www.baidu.com/s?wd=${myInput.value}`);
+      } else {
+        to_url(`https://kafuuchino.com.cn`);
+      }
+      event.preventDefault();
+    }
+  }
+});
 
 // 聚焦
 function search_input_focus() {
@@ -154,11 +181,7 @@ $(".search_result").bind("click", "div", function (e) {
     search_input_blur();
   }, 500);
   const val = $(e.target).text();
-  if ($("#tiao")) $("#tiao").remove();
-  $("body").append(
-    `<a id="tiao" href="https://www.baidu.com/s?wd=${val}"></a>`
-  );
-  console.log($("#tiao")[0].click());
+  to_url(`https://www.baidu.com/s?wd=${val}`);
 });
 
 // 写入搜索结果
@@ -176,6 +199,13 @@ function set_search_result(data) {
   $(".cover").css("background-color", "rgba(0, 0, 0, .3)");
   $(".search_result").html(html);
   $(".search_result").css("height", `${data.length * 30}px`);
+}
+
+// 跳转到url
+function to_url(url) {
+  if ($("#tiao")) $("#tiao").remove();
+  $("body").append(`<a id="tiao" href="${url}"></a>`);
+  $("#tiao")[0].click();
 }
 
 // 日期
