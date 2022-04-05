@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "RABBITAPI",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "RABBITAPI随机壁纸",
   "icons": {
     "16": "img/icon.png",
