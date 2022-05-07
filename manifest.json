@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "RABBITAPI",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "RABBITAPI起始页",
   "icons": {
     "16": "img/icon.png",
@@ -22,7 +22,7 @@
   ],
   "homepage_url": "https://kafuuchino.com.cn/",
   "chrome_url_overrides": {
-    "newtab": "newtab.html"
+    "newtab": "./vue/dist/index.html"
   },
   "options_ui": {
     "page": "options.html"
