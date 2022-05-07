@@ -21,7 +21,7 @@ const render_img = () => {
 };
 
 // 移除首页Loading
-const remove_loading = () => {
+export const remove_loading = () => {
   if (document.getElementById("loading_warp")) {
     document.getElementById("loading_warp").style.opacity = 0;
     setTimeout(() => {

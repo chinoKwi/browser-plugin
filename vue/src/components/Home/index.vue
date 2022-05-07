@@ -1,5 +1,7 @@
 <template>
+  <!-- 展位 -->
   <div id="root_preload"></div>
+  <!-- 背景 -->
   <div class="new_tab_box">
     <!-- 壁纸 -->
     <div class="bg_wrap">
@@ -12,6 +14,7 @@
       <div class="cover"></div>
     </div>
   </div>
+  <Login style="position: absolute; z-index: 10" />
   <img
     id="img_bg"
     ref="imgBgRefCom"
@@ -21,13 +24,15 @@
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
-import { load_bg } from "./hooks/useHandler";
+import { load_bg, remove_loading } from "./hooks/useHandler";
 import { img_info, imgBgRef } from "./hooks/useData";
+import Login from "../Login/index.vue";
 const imgBgRefCom = ref();
 
 onMounted(() => {
   imgBgRef.value = imgBgRefCom;
-  load_bg();
+  remove_loading();
+  // load_bg();
 });
 </script>
 <style lang="less" scoped>
