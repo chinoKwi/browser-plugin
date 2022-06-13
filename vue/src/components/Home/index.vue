@@ -15,24 +15,15 @@
     </div>
   </div>
   <Login style="position: absolute; z-index: 10" />
-  <img
-    id="img_bg"
-    ref="imgBgRefCom"
-    style="display: none"
-    :src="img_info.url ? img_info.url : ''"
-  />
 </template>
 <script setup>
-import { ref, onMounted } from "vue";
+import { onMounted } from "vue";
 import { load_bg, remove_loading } from "./hooks/useHandler";
-import { img_info, imgBgRef } from "./hooks/useData";
+import { img_info } from "./hooks/useData";
 import Login from "../Login/index.vue";
-const imgBgRefCom = ref();
 
 onMounted(() => {
-  imgBgRef.value = imgBgRefCom;
-  remove_loading();
-  // load_bg();
+  load_bg();
 });
 </script>
 <style lang="less" scoped>
