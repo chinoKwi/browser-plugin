@@ -4,8 +4,9 @@ import { img_info } from "./useData";
 export const load_bg = async () => {
   const res = await GetBg();
   if (res.meta.status !== 200) return;
-  img_info.value = res.data;
+  img_info.value = {}; // res.data
   if (!img_info.value.url) {
+    remove_loading();
     return window.$message.info("请将应用返回数据格式设置为JSON");
   }
   render_img();

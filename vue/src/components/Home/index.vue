@@ -1,7 +1,5 @@
 <template>
-  <!-- 展位 -->
-  <div id="root_preload"></div>
-  <!-- 背景 -->
+  <!-- 背景部分 -->
   <div class="new_tab_box">
     <!-- 壁纸 -->
     <div class="bg_wrap">
@@ -11,10 +9,12 @@
           'background-image': `url(${img_info.url ? img_info.url : ''})`,
         }"
       ></div>
-      <div class="cover"></div>
     </div>
   </div>
-  <Login style="position: absolute; z-index: 10" />
+  <!-- 时间部分 -->
+  <div class="show_time_box"></div>
+  <!-- 拖拽部分 -->
+  <!-- <Login style="position: absolute; z-index: 10" /> -->
 </template>
 <script setup>
 import { onMounted } from "vue";
@@ -27,18 +27,9 @@ onMounted(() => {
 });
 </script>
 <style lang="less" scoped>
-#root_preload {
-  background-color: #fff;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-}
 .new_tab_box {
-  position: absolute;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  transform: translate3d(0, 0, 0);
+  height: 100vh;
+  width: 100vw;
   .bg_wrap {
     user-select: none;
     animation-fill-mode: none !important;
@@ -58,14 +49,6 @@ onMounted(() => {
       background-size: cover;
       background-position: 50%;
       transition-timing-function: ease;
-    }
-    .cover {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      transition: all 0.3s;
     }
   }
 }

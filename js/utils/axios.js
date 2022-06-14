@@ -11,6 +11,7 @@ function axios(obj) {
         resolve(data);
       })
       .catch((err) => {
+        window.$message.error("请求出错");
         reject(err);
       });
   });

@@ -11,7 +11,7 @@ instance.interceptors.response.use(
     return config.data;
   },
   (error) => {
-    console.log("响应出错", error);
+    window.$message.error("服务器思考中,请稍后再试试~");
     return error;
   }
 );
