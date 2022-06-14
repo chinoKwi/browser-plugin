@@ -6,7 +6,7 @@
       <div
         class="bg_image"
         :style="{
-          'background-image': `url(${img_info.url ? img_info.url : ''})`,
+          'background-image': `url(${ImgInfo.url ? ImgInfo.url : ''})`,
         }"
       ></div>
     </div>
@@ -18,12 +18,12 @@
 </template>
 <script setup>
 import { onMounted } from "vue";
-import { load_bg, remove_loading } from "./hooks/useHandler";
-import { img_info } from "./hooks/useData";
+import { LoadBg } from "./hooks/useHandler";
+import { ImgInfo } from "./hooks/useData";
 import Login from "../Login/index.vue";
 
 onMounted(() => {
-  load_bg();
+  LoadBg();
 });
 </script>
 <style lang="less" scoped>

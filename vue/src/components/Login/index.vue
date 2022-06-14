@@ -4,10 +4,6 @@
     <p>Some contents...</p>
     <p>Some contents...</p>
     <p>Some contents...</p>
-    <template #footer>
-      <a-button key="back">Return</a-button>
-      <a-button key="submit" type="primary" :loading="loading">Submit</a-button>
-    </template>
   </Modal>
 </template>
 <script setup>

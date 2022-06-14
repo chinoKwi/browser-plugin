@@ -1,11 +1,11 @@
 import { GetBg } from "../../../api/user";
-import { img_info } from "./useData";
+import { ImgInfo } from "./useData";
 // 加载壁纸
-export const load_bg = async () => {
+export const LoadBg = async () => {
   const res = await GetBg();
   if (res.meta.status !== 200) return;
-  img_info.value = {}; // res.data
-  if (!img_info.value.url) {
+  ImgInfo.value = {}; // res.data
+  if (!ImgInfo.value.url) {
     remove_loading();
     return window.$message.info("请将应用返回数据格式设置为JSON");
   }
@@ -15,7 +15,7 @@ export const load_bg = async () => {
 // 渲染IMG
 const render_img = () => {
   const ele = document.createElement("img");
-  ele.src = img_info.value.url;
+  ele.src = ImgInfo.value.url;
   document.body.append(ele);
   ele.onload = function () {
     remove_loading();
