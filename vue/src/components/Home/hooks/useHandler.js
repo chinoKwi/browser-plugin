@@ -3,7 +3,7 @@ import { ImgInfo } from "./useData";
 // 加载壁纸
 export const LoadBg = async () => {
   const res = await GetBg();
-  if (res.meta.status !== 200) return;
+  if (res.meta.status !== 200) return remove_loading();
   ImgInfo.value = {}; // res.data
   if (!ImgInfo.value.url) {
     remove_loading();

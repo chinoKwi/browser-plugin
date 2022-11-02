@@ -8,6 +8,9 @@ const instance = axios.create({
 
 instance.interceptors.response.use(
   (config) => {
+    if (config.data.meta.status !== 200) {
+      window.$message.error(config.data.meta.msg);
+    }
     return config.data;
   },
   (error) => {
