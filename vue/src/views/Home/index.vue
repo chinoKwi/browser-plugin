@@ -3,6 +3,14 @@
     <!-- 背景组件 -->
     <BackGround />
     <div class="main-content">
+      <!-- 左下角 图片作者信息 -->
+      <div class="painter-area">
+        <!-- target="_blank" -->
+        插画由&nbsp;<a href="javascript:" class="link">{{
+          ImgInfo.imgauthor
+        }}</a>
+      </div>
+      <!-- 右下角 配置信息 -->
       <div class="config-area">
         <Tooltip
           placement="top"
@@ -36,6 +44,7 @@ import Login from "../../components/Login/index.vue";
 import AppList from "../../components/AppList/index.vue";
 import BackGround from "./components/BackGround.vue";
 import ShowTime from "./components/ShowTime.vue";
+import { ImgInfo } from "./hooks/useData";
 
 const loginRef = ref(null);
 const appListRef = ref(null);
@@ -75,6 +84,24 @@ LoadBg();
       font-size: 20px;
       color: #fff;
       margin-right: 20px;
+    }
+  }
+  .painter-area {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    // width: 200px;
+    height: 30px;
+    // background-color: aqua;
+
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.6);
+    white-space: nowrap;
+    .link {
+      text-decoration: none;
+      transition: color 0.15s ease 0s, filter 0.15s ease 0s;
+      color: rgba(255, 255, 255, 0.8);
     }
   }
 }
