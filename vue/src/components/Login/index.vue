@@ -1,10 +1,4 @@
 <template>
-  <a-button
-    type="primary"
-    class="login_btn"
-    @click="login_dialog_visible = true"
-    >Primary Button</a-button
-  >
   <Modal title="登 陆" v-model:visible="login_dialog_visible" :footer="null">
     <!-- 登录表单 -->
     <Spin :spinning="loading">
@@ -140,6 +134,12 @@ const getUserNickName = async () => {
 
 isLogin();
 getUserNickName();
+
+defineExpose({
+  openModal: function () {
+    login_dialog_visible.value = true;
+  },
+});
 </script>
 <style lang="less" scoped>
 .login_btn {

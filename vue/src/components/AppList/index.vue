@@ -1,7 +1,5 @@
 <template>
-  <Button type="primary" class="app_list_btn" @click="getData()"
-    >应用列表</Button
-  >
+  <!-- <AppstoreOutlined class="app_list_btn" @click="getData()" /> -->
   <Modal title="应用列表" v-model:visible="showAppListVisible" :footer="null">
     <Spin :spinning="loading">
       <Table :columns="columns" :data-source="data">
@@ -28,6 +26,7 @@
 <script setup>
 import { ref } from "vue";
 import { Modal, Spin, Table, Button, Tag } from "ant-design-vue";
+import { AppstoreOutlined } from "@ant-design/icons-vue";
 import { GetAppList } from "@/api/user";
 
 const loading = ref(false);
@@ -71,7 +70,11 @@ const useApp = (data) => {
   chrome.storage.sync.set({ apiToken: data.token, apiAppId: data._id });
 };
 
-// getData();
+defineExpose({
+  openModal: function () {
+    getData();
+  },
+});
 </script>
 <style lang="less" scoped>
 .app_list_btn {
