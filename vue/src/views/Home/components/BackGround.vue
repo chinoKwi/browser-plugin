@@ -1,5 +1,6 @@
 <template>
   <div class="back_ground">
+    <div class="cover"></div>
     <!-- 壁纸 -->
     <div class="bg_wrap">
       <div
@@ -16,6 +17,7 @@ import { ImgInfo } from "../hooks/useData";
 </script>
 <style lang="less" scoped>
 .back_ground {
+  position: relative;
   height: 100vh;
   width: 100vw;
   .bg_wrap {
@@ -39,5 +41,22 @@ import { ImgInfo } from "../hooks/useData";
       transition-timing-function: ease;
     }
   }
+}
+.cover {
+  z-index: 1;
+  opacity: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0) 35%,
+      rgba(0, 0, 0, 0) 80%,
+      rgba(0, 0, 0, 0.6) 100%
+    )
+    center center / cover no-repeat fixed;
+  transition: 0.25s;
 }
 </style>

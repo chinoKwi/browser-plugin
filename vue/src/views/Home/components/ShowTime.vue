@@ -20,8 +20,8 @@ setInterval(() => {
 <style lang="less" scoped>
 .showTime {
   position: absolute;
-  right: 50px;
-  top: 30px;
+  right: 70px;
+  top: 10px;
   font-size: 78px;
   font-weight: 300;
   color: rgb(255, 255, 255);

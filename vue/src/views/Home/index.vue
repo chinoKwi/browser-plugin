@@ -2,13 +2,15 @@
   <div class="main">
     <!-- 背景组件 -->
     <BackGround />
-    <!-- 时间部分 -->
-    <ShowTime />
-    <!-- 拖拽部分 -->
-    <MostVisited />
-    <!-- 登录组件 -->
-    <Login />
-    <AppList />
+    <div class="main-content">
+      <!-- 时间部分 -->
+      <ShowTime />
+      <!-- 拖拽部分 -->
+      <MostVisited />
+      <!-- 登录组件 -->
+      <Login />
+      <AppList />
+    </div>
   </div>
 </template>
 <script setup>
@@ -26,5 +28,13 @@ LoadBg();
   position: relative;
   width: 100vw;
   height: 100vh;
+}
+.main-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
 }
 </style>
