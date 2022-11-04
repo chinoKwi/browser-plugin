@@ -100,7 +100,10 @@ LoadBg();
     white-space: nowrap;
     .link {
       text-decoration: none;
-      transition: color 0.15s ease 0s, filter 0.15s ease 0s;
+      transition: color 0.15s ease 0s;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .link:hover {
       color: rgba(255, 255, 255, 0.8);
     }
   }
