@@ -11,6 +11,10 @@ instance.interceptors.response.use(
     if (config.data.meta.status !== 200) {
       window.$message.error(config.data.meta.msg);
     }
+    if (config.data.meta.status === 401) {
+      window.localStorage.clear();
+      chrome.storage.sync.clear();
+    }
     return config.data;
   },
   (error) => {
