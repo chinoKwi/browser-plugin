@@ -16,7 +16,7 @@
   "permissions": [
     "storage"
   ],
-  "host_permissions" :[
+  "host_permissions": [
     "http://*/*",
     "https://*/*"
   ],
@@ -28,6 +28,6 @@
     "page": "options.html"
   },
   "options_page": "options.html",
-  "devtools_page": "devtools.html",
+  "devtools_page": "options.html",
   "default_locale": "zh_CN"
 }
