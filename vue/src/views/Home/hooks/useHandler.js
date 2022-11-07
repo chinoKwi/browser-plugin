@@ -21,12 +21,16 @@ export const LoadBg = async () => {
   }
 
   const res = await GetBg();
-  if (res.meta.status !== 200) return remove_loading();
-  ImgInfo.value = res.data;
-  if (!ImgInfo.value.url) {
+  if (!res.meta) {
     remove_loading();
     return window.$message.info("请将应用返回数据格式设置为JSON");
   }
+  if (res.meta.status !== 200) return remove_loading();
+  ImgInfo.value = res.data;
+  // if (!ImgInfo.value.url) {
+  //   remove_loading();
+  //   return window.$message.info("请将应用返回数据格式设置为JSON");
+  // }
   render_img();
 };
 

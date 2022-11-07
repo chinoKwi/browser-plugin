@@ -114,7 +114,6 @@ const isLogin = async () => {
   const token =
     window.localStorage.getItem("userToken") ||
     (await chrome.storage.sync.get({ userToken: "" }).userToken);
-  console.log("token", token);
   if (token) {
     loginState.value = true;
   } else {

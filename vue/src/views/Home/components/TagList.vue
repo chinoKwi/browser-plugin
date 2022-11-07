@@ -53,7 +53,7 @@ const $NormalSort = function (arr) {
 }
 
 const tags = computed(() => {
-  list.value = $NormalSort($RandomSplit(props.tagList.length, 3));// 获取数据结构
+  list.value = $NormalSort($RandomSplit(props.tagList.length, 8));// 获取数据结构
   let temp = props.tagList.sort(function (a, b) {// 重新随机排序
     return Math.random() > .5 ? -1 : 1;
   }).concat();
