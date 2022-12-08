@@ -30,7 +30,7 @@ export const GetBg = async () => {
     window.localStorage.getItem("apiToken") ||
     (await chrome.storage.sync.get({ apiToken: "" }).apiToken);
 
-  return instance.get("https://rabbit-api.com", {
+  return instance.get("https://api.kafuuchino.com.cn", {
     params: {
       appid,
       token,

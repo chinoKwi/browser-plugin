@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "RABBITAPI",
+  "name": "RABBITAPI起始页",
   "version": "2.0.1",
-  "description": "RABBITAPI起始页",
+  "description": "RABBITAPI起始页,替换原始起始页,随机可自定义精美壁纸",
   "icons": {
     "16": "img/icon.png",
     "48": "img/icon.png",
